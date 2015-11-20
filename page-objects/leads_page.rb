@@ -3,11 +3,16 @@ class LeadsPage
 
   page_section :top_bar_settings, TopBarSettingSection, id: 'user-dd'
 
-  a :newLead, id: 'leads-new'
+  link :newLead, id: 'leads-new'
   text_field :lastName, id: 'lead-last-name'
   button :save, css: '.save'
   span :lead_status, css: '.lead-status'
   body :body, css: '[data-controller="leads"]'
+  li :no_leads_text, css: '.item.empty'
+  link :select_all_leads_cb, css: '.select-all'
+  span :more_action, id: 'leads-more-actions'
+  link :leads_delete, id: 'leads-delete'
+  link :remove_confirm, css: '.confirm'
 
   #this method would be executed when you run SomePage.new(browser)
   def initialize_page
@@ -31,7 +36,16 @@ class LeadsPage
   end
 
   def select_created_lead(lead_name)
-    element a, xpath: '//*[text()="#{lead_name}"]'
+    link_element(xpath: ".//*[text()='#{lead_name}']").click()
+    #wait_until(10) { lead_created? }
+  end
+
+  def delete_all_leads
+    self.select_all_leads_cb_element.click()
+    self.more_action_element.click()
+    self.leads_delete_element.click()
+    self.remove_confirm_element.click()
+    wait_until(10) { loaded? }
   end
 
 end

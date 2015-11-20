@@ -9,7 +9,7 @@ class SettingsPage
   link :tags, css: '[href="#tags"]'
   button :new_edit, xpath: '(//*[@id="lead-status"]//button)[1]'
   text_field :new_name, id: 'name'
-  button :new_save, xpath: '(//*[@id="lead-sources"]//button)[1]'
+  button :new_save, xpath: '(//*[@id="lead-status"]//button)[1]'
 
   #this method would be executed when you run SomePage.new(browser)
   def initialize_page
@@ -22,13 +22,13 @@ class SettingsPage
   end
 
   def change_lead_status(new_name)
-    @leads
-    @lead_statuses
-    @new_edit
-    @new_name = new_name
-    @new_save
+    self.leads
+    self.lead_statuses
+    self.new_edit
+    browser.execute_script "document.getElementsByName('name')[3].value='#{new_name}'"
+    #self.new_name_element.when_visible.send_keys [:shift, 'N', 'A']
+
+    #self.new_name_element.when_visible.send_keys(new_name)
+    self.new_save_element.when_visible.click()
   end
-
-
-
 end
