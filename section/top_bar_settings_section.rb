@@ -1,9 +1,9 @@
 class TopBarSettingSection
   include PageObject
 
-  a :userDD, css: '[href="#user-dd"]'
+  div :user_avatar, css: '[class="user-avatar"]'
   ul :topbarSettingDD, css: '.topbar-settings-dropdown.dropdown-menu'
-  link :settings, css: '[class="icon-cog"]'
+  i :settings, css: '[class="icon-cog"]'
 
   def initialize_page
     puts '  init settings section'
@@ -11,12 +11,14 @@ class TopBarSettingSection
   end
 
   def loaded?
-    userDD?
+    user_avatar
   end
 
   def open_settings_page
-    self.userDD_element.when_visible.click
-    self.settings_element.when_visible.click
+    self.user_avatar_element.when_visible.click
+    self.topbarSettingDD.when_visible do
+      self.settings_element.when_visible.click
+    end
     return SettingsPage.new browser
   end
 end
