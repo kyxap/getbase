@@ -3,7 +3,7 @@ class TopBarSettingSection
 
   div :user_avatar, css: '[class="user-avatar"]'
   ul :topbarSettingDD, css: '.topbar-settings-dropdown.dropdown-menu'
-  i :settings, css: '[class="icon-cog"]'
+  li :settings, css: '[class="settings"]'
 
   def initialize_page
     puts '  init settings section'
