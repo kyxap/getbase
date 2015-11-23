@@ -1,0 +1,13 @@
+language: ruby
+
+rvm: # the Ruby versions to be used
+  - 2.2
+
+cache: bundler
+
+before_install:
+  - gem install watir-webdriver
+  - gem install page-object
+  - gem install rspec
+
+script: rspect './spec/automation_task_spec.rb'
