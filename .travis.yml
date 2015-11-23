@@ -1,5 +1,7 @@
 language: ruby
 
+sudo: false
+
 rvm: # the Ruby versions to be used
   - 2.2
 

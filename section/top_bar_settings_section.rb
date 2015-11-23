@@ -13,20 +13,11 @@ class TopBarSettingSection
 
   def loaded?
     userDD?
-    #topbarSettingDD?
   end
 
   def open_settings_page
-    self.userDD_element.click()
-    # переписал тут
-      self.settings_element.click
-    # #wait_until(10) { settings_dd_loaded? }
-    # self.settings_dd_loaded?
-    #self.settings_element.click()
+    self.userDD_element.when_visible.click
+    self.settings_element.when_visible.click
     return SettingsPage.new browser
-  end
-
-  def settings_dd_loaded?
-    topbarSettingDD?
   end
 end
