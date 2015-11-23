@@ -12,6 +12,7 @@ before_install:
   - bundle install
 
 addons:
-  firefox: "40.0"
+  firefox: "41.0"
+  chrome: "46.0"
 
 script: rspec ./spec/automation_task_spec.rb
