@@ -13,6 +13,6 @@ before_install:
 
 addons:
   firefox: "41.0"
-  chrome: "46.0"
+  #chrome: "46.0"
 
 script: rspec ./spec/automation_task_spec.rb
