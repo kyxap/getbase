@@ -3,14 +3,10 @@ language: ruby
 rvm: # the Ruby versions to be used
   - 2.2
 
-bundle install
-
 #cache: bundler
 
 before_install:
-#  - gem install watir-webdriver
-#  - gem install page-object
-#  - gem install rspec
+  - bundle install
 
 addons:
   firefox: "41.0"
