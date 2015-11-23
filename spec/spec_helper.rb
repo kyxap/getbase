@@ -30,12 +30,15 @@ require_relative '../page-objects/settings_page'
 RSpec.configure do |config|
 
   config.before :all do
+    # local
     # @browser = Watir::Browser.new
     # @browser.driver.manage.window.maximize
     # @browser.goto 'https://app.futuresimple.com/'
 
+    # headless
     @headless = Headless.new
     @headless.start
+    @browser.driver.manage.window.maximize
     @browser = Watir::Browser.start 'https://app.futuresimple.com/'
   end
 
