@@ -10,6 +10,6 @@ class LoginPage
     self.username = login
     self.password = pass
     self.login
-    return SalesPage.new(browser)
+    return SalesPage.new browser
   end
 end

@@ -1,6 +1,7 @@
 require 'rspec'
 require 'watir-webdriver'
 require 'page-object'
+#require 'listener'
 require_relative '../section/top_bar_section'
 require_relative '../section/top_bar_settings_section'
 require_relative '../page-objects/login_page'

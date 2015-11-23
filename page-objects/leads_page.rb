@@ -1,6 +1,7 @@
 class LeadsPage
   include PageObject
 
+  page_section :top_bar, TopBarSection, css: '.pull-left'
   page_section :top_bar_settings, TopBarSettingSection, id: 'user-dd'
 
   link :newLead, id: 'leads-new'
@@ -36,15 +37,18 @@ class LeadsPage
   end
 
   def select_created_lead(lead_name)
-    link_element(xpath: ".//*[text()='#{lead_name}']").click
+    #wait_until(10) { loaded? }
+    #link_element(xpath: ".//a[text()='#{lead_name}']").click
+    puts path = ".//a[text()='#{lead_name}']"
+    link_element(xpath: path).when_visible.click
     wait_until(10) { lead_created? }
   end
 
   def delete_all_leads
-    self.select_all_leads_cb_element.click()
-    self.more_action_element.click()
-    self.leads_delete_element.click()
-    self.remove_confirm_element.click()
+    self.select_all_leads_cb_element.click
+    self.more_action_element.click
+    self.leads_delete_element.click
+    self.remove_confirm_element.click
     wait_until(10) { loaded? }
   end
 
