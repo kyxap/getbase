@@ -42,8 +42,16 @@ RSpec.configure do |config|
     # @browser.driver.manage.window.maximize
     # @browser.goto 'https://app.futuresimple.com/'
 
-    headless chrome
-    @headless = Headless.new
+    # headless ff
+    # @headless = Headless.new
+    # @headless.start
+    # @browser = Watir::Browser.start 'https://app.futuresimple.com/'
+
+    # headless chrome
+    chromedriver_path = File.join("./bin/chromedriver.exe")
+    Selenium::WebDriver::Chrome.driver_path = chromedriver_path
+    @headless = Headless.new :chrome
+    @headless.driver.manage.window.maximize
     @headless.start
     @browser = Watir::Browser.start 'https://app.futuresimple.com/'
   end
