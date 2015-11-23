@@ -15,7 +15,7 @@ class TopBarSettingSection
   end
 
   def open_settings_page
-    self.user_avatar_element.when_visible.click
+    self.user_avatar_element.click
     self.settings_element.when_visible.click
     return SettingsPage.new browser
   end
