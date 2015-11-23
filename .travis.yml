@@ -10,4 +10,4 @@ before_install:
   - gem install page-object
   - gem install rspec
 
-script: rspect './spec/automation_task_spec.rb'
+script: rspec ./spec/automation_task_spec.rb
