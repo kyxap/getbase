@@ -6,7 +6,7 @@ class TopBarSettingSection
   li :settings, css: '[class="settings"]'
 
   def initialize_page
-    puts '  init settings section'
+    puts '    init settings section'
     browser.wait_until(10) {loaded?}
   end
 
@@ -16,9 +16,7 @@ class TopBarSettingSection
 
   def open_settings_page
     self.user_avatar_element.when_visible.click
-    self.topbarSettingDD.when_visible do
-      self.settings_element.when_visible.click
-    end
+    self.settings_element.when_visible.click
     return SettingsPage.new browser
   end
 end
