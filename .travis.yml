@@ -1,8 +1,6 @@
 language: ruby
 
-sudo: false
-
-rvm: # the Ruby versions to be used
+rvm:
   - 2.2
 
 before_script:

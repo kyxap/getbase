@@ -11,9 +11,7 @@ class SettingsPage
   text_field :new_name, id: 'name'
   button :new_save, xpath: '(//*[@id="lead-status"]//button)[1]'
 
-  #this method would be executed when you run SomePage.new(browser)
   def initialize_page
-    #wait until main button will displayed
     wait_until(10) { loaded? }
   end
 

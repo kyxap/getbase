@@ -1,13 +1,12 @@
 class TopBarSettingSection
   include PageObject
 
-  #button :userDD, id: 'user-dd'
   a :userDD, css: '[href="#user-dd"]'
   ul :topbarSettingDD, css: '.topbar-settings-dropdown.dropdown-menu'
-  link :settings, css: '[href="/settings/profile"]'
+  link :settings, css: '[class="icon-cog"]'
 
   def initialize_page
-    puts 'init settings section'
+    puts '  init settings section'
     browser.wait_until(10) {loaded?}
   end
 
