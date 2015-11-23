@@ -58,7 +58,7 @@ describe 'Automation Task' do
     @settings_page.change_lead_status(@lead_def_name)
   end
 
-  # after :all do
+    # after :all do
   #   puts '  a). Set Leads status back'
   #   @leads_page.top_bar_settings.open_settings_page
   #   @settings_page.change_lead_status(@lead_def_name)
