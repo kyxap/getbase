@@ -26,9 +26,6 @@ class SettingsPage
     self.lead_statuses
     self.new_edit
     browser.execute_script "document.getElementsByName('name')[3].value='#{new_name}'"
-    #self.new_name_element.when_visible.send_keys [:shift, 'N', 'A']
-
-    #self.new_name_element.when_visible.send_keys(new_name)
-    self.new_save_element.when_visible.click()
+    self.new_save_element.when_visible.click
   end
 end

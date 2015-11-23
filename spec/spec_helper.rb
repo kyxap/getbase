@@ -1,7 +1,6 @@
 require 'rspec'
 require 'watir-webdriver'
 require 'page-object'
-#require 'listener'
 require_relative '../section/top_bar_section'
 require_relative '../section/top_bar_settings_section'
 require_relative '../page-objects/login_page'
@@ -30,7 +29,10 @@ require_relative '../page-objects/settings_page'
 RSpec.configure do |config|
 
   config.before :all do
-    @browser = Watir::Browser.new
+    #chromedriver_path = File.join(File.absolute_path('../..', 'bin'),"browsers","chromedriver.exe")
+    #Selenium::WebDriver::Chrome.driver_path = './bin/chromedriver.exe'
+    @browser = Watir::Browser.new #:chrome
+
     @browser.driver.manage.window.maximize
     @browser.goto 'https://app.futuresimple.com/'
   end
