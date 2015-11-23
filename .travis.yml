@@ -3,11 +3,16 @@ language: ruby
 rvm: # the Ruby versions to be used
   - 2.2
 
-cache: bundler
+bundle install
+
+#cache: bundler
 
 before_install:
-  - gem install watir-webdriver
-  - gem install page-object
-  - gem install rspec
+#  - gem install watir-webdriver
+#  - gem install page-object
+#  - gem install rspec
+
+addons:
+  firefox: "41.0"
 
 script: rspec ./spec/automation_task_spec.rb
