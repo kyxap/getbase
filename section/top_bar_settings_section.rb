@@ -1,7 +1,7 @@
 class TopBarSettingSection
   include PageObject
 
-  div :user_avatar, css: '[class="user-avatar"]'
+  div :user_avatar, xpath: './/div[@class="user-avatar"]'
   ul :topbarSettingDD, css: '.topbar-settings-dropdown.dropdown-menu'
   li :settings, css: '[class="settings"]'
 
@@ -15,7 +15,7 @@ class TopBarSettingSection
   end
 
   def open_settings_page
-    self.user_avatar_element.click
+    self.user_avatar_element.when_visible.click
     self.settings_element.when_visible.click
     return SettingsPage.new browser
   end
