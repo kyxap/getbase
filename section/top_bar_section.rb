@@ -5,7 +5,7 @@ class TopBarSection
   ul :nav_main, id: 'nav-main'
 
   def initialize_page
-    puts 'init tob bar section'
+    puts '    init top bar section'
     browser.wait_until(10) {loaded?}
   end
 

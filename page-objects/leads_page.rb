@@ -37,8 +37,7 @@ class LeadsPage
   end
 
   def select_created_lead(lead_name)
-    puts path = ".//h3/a[text()='#{lead_name}']"
-    link_element(xpath: path).when_visible.click
+    link_element(xpath: ".//h3/a[text()='#{lead_name}']").when_visible.click
     wait_until(10) { lead_created? }
   end
 

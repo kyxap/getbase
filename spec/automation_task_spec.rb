@@ -48,20 +48,15 @@ describe 'Automation Task' do
     @settings_page.change_lead_status(@lead_name)
 
     puts '5. Go back to the Lead to check if the name change is reflected.'
-    @leads_page.top_bar.select_leads_tab #is it correct?
+    @leads_page.top_bar.select_leads_tab
     @leads_page.select_created_lead(@lead_name)
     expect(@leads_page.lead_status).to eql(@lead_name)
+  end
 
-    #TODO: insert into after all
+    after @leads_page, @settings_page do
     puts '  a). Set Leads status back'
     @leads_page.top_bar_settings.open_settings_page
     @settings_page.change_lead_status(@lead_def_name)
   end
-
-    # after :all do
-  #   puts '  a). Set Leads status back'
-  #   @leads_page.top_bar_settings.open_settings_page
-  #   @settings_page.change_lead_status(@lead_def_name)
-  # end
 
 end
