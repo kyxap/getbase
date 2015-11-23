@@ -30,7 +30,7 @@ class LeadsPage
   end
 
   def create_new_lead_req_fields_only(last_name)
-    self.newLead_element.click
+    self.newLead_element.when_visible.click
     self.lastName = last_name
     self.save
     wait_until(10) { lead_created? }

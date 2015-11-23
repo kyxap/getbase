@@ -38,7 +38,6 @@ RSpec.configure do |config|
     # headless
     @headless = Headless.new
     @headless.start
-    @browser.driver.manage.window.maximize
     @browser = Watir::Browser.start 'https://app.futuresimple.com/'
   end
 
