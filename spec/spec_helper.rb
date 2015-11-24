@@ -30,30 +30,18 @@ require_relative '../page-objects/settings_page'
 RSpec.configure do |config|
 
   config.before :all do
-    # local ff
-    # @browser = Watir::Browser.new
-    # @browser.driver.manage.window.maximize
-    # @browser.goto 'https://app.futuresimple.com/'
 
-    # local chrome
-    # chromedriver_path = File.join("./bin/chromedriver.exe")
-    # Selenium::WebDriver::Chrome.driver_path = chromedriver_path
-    # @browser = Watir::Browser.new :chrome
-    # @browser.driver.manage.window.maximize
-    # @browser.goto 'https://app.futuresimple.com/'
-
-    ## headless ff
-    @headless = Headless.new
-    @headless.start
-    @browser = Watir::Browser.start 'https://app.futuresimple.com/'
-
-    # headless chrome
-    # #chromedriver_path = File.join("./bin/chromedriver.exe")
-    # #Selenium::WebDriver::Chrome.driver_path = chromedriver_path
-    # @headless = Headless.new #:chrome
-    # @headless.driver.manage.window.maximize
-    # @headless.start
-    # @browser = Watir::Browser.start 'https://app.futuresimple.com/'
+    if @TRAVIS == true
+      ## headless
+      @headless = Headless.new
+      @headless.start
+      @browser = Watir::Browser.start 'https://app.futuresimple.com/'
+    else
+      ## local ff
+      @browser = Watir::Browser.new
+      @browser.driver.manage.window.maximize
+      @browser.goto 'https://app.futuresimple.com/'
+    end
   end
 
   # Close that browser after each example.
