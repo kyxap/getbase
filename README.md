@@ -16,3 +16,5 @@ All src you can find at: https://github.com/kyxap/getbase
 Also I have integrate the tests with Travis CI, last successful test run results you can find at: https://travis-ci.org/kyxap/getbase/builds/92888667
 
 The project can run at the local machine and install all dependencies also can run in headless mode with travis ci without any configuration updates.
+
+![](https://github.com/kyxap/getbase/blob/master/getBaseReport.png)
