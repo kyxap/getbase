@@ -1,4 +1,4 @@
-# GetBase - Ruby, Watir
+# GetBase - Ruby, Watir [![Build Status](https://travis-ci.org/kyxap/getbase.svg?branch=master)](https://travis-ci.org/kyxap/getbase)
 One of tech task for QA Automation position (Ruby, Watir).
 
 The task:
