@@ -1,4 +1,4 @@
-# GetBase - Ruby, Watir [![Build Status](https://travis-ci.org/kyxap/getbase.svg?branch=master)](https://travis-ci.org/kyxap/getbase)
+# GetBase - Ruby, Watir [![Build Status](https://travis-ci.org/kyxap/getbase.svg?branch=master)](https://travis-ci.org/kyxap/getbase) [![codebeat badge](https://codebeat.co/badges/8842fe5c-088e-44db-9f39-61c06d56c98c)](https://codebeat.co/projects/github-com-kyxap-getbase-master)
 One of tech task for QA Automation position (Ruby, Watir).
 
 The task:
